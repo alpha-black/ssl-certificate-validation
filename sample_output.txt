@@ -1,0 +1,90 @@
+ % ./validate www.adom.de 443   
+Certificate Issuer
+countryName               = US
+organizationName          = Equifax
+organizationalUnitName    = Equifax Secure Certificate Authority
+Certificate Subject
+countryName               = US
+organizationName          = Equifax
+organizationalUnitName    = Equifax Secure Certificate Authority
+=======
+Certificate Issuer
+countryName               = US
+organizationName          = Equifax
+organizationalUnitName    = Equifax Secure Certificate Authority
+Certificate Subject
+countryName               = US
+organizationName          = GeoTrust Inc.
+commonName                = GeoTrust Global CA
+=======
+Certificate Issuer
+countryName               = US
+organizationName          = GeoTrust Inc.
+commonName                = GeoTrust Global CA
+Certificate Subject
+countryName               = US
+organizationName          = GeoTrust, Inc.
+commonName                = RapidSSL CA
+=======
+Certificate Issuer
+countryName               = US
+organizationName          = GeoTrust, Inc.
+commonName                = RapidSSL CA
+Certificate Subject
+serialNumber              = z22nJLEHk5j9gDKnBnjJ3thL9Ac4zOrs
+countryName               = DE
+organizationName          = *.powerweb.de
+organizationalUnitName    = GT36308742
+organizationalUnitName    = See www.rapidssl.com/resources/cps (c)12
+organizationalUnitName    = Domain Control Validated - RapidSSL(R)
+commonName                = *.powerweb.de
+=======
+Exiting due to error: Peer certificate SAN does not match Host name. Expected www.adom.de, Found DNS: *.powerweb.de powerweb.de  
+
+
+% ./validate www.facebook.com 443   
+Certificate Issuer
+countryName               = US
+organizationName          = DigiCert Inc
+organizationalUnitName    = www.digicert.com
+commonName                = DigiCert High Assurance EV Root CA
+Certificate Subject
+countryName               = US
+organizationName          = DigiCert Inc
+organizationalUnitName    = www.digicert.com
+commonName                = DigiCert High Assurance EV Root CA
+=======
+Certificate Issuer
+countryName               = US
+organizationName          = DigiCert Inc
+organizationalUnitName    = www.digicert.com
+commonName                = DigiCert High Assurance EV Root CA
+Certificate Subject
+countryName               = US
+organizationName          = DigiCert Inc
+organizationalUnitName    = www.digicert.com
+commonName                = DigiCert SHA2 High Assurance Server CA
+=======
+Certificate Issuer
+countryName               = US
+organizationName          = DigiCert Inc
+organizationalUnitName    = www.digicert.com
+commonName                = DigiCert SHA2 High Assurance Server CA
+Certificate Subject
+countryName               = US
+stateOrProvinceName       = CA
+localityName              = Menlo Park
+organizationName          = Facebook, Inc.
+commonName                = *.facebook.com
+=======
+----------Dumping HTTP response--------
+HTTP/1.1 302 Found
+Location: https://www.facebook.com/unsupportedbrowser
+X-Content-Type-Options: nosniff
+X-FB-Stats-Contexts: www
+X-FB-Stats-Contexts: V3
+Content-Type: text/html
+X-FB-Debug: zIJRi1cxdX9U3Alfy8zVJU84qBhld/MAKmEOnvIka2Qj76N0tUvG+FaOZkKo0iwW/4hKFt9NcTLoo5y82HS44Q==
+Date: Thu, 12 Nov 2015 20:20:02 GMT
+Connection: close
+Content-Length: 0

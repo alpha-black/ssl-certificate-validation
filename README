@@ -1,0 +1,25 @@
+Library used - Openssl. The pragma is to ignore depcrecated warning in OS X.
+The main source of reference was https://www.openssl.org/docs/manmaster/ (man pages
+for Openssl).
+Others:
+[1]. http://etutorials.org/Programming/secure+programming/Chapter+10.+Public+Key+Infrastructure/10.8+Adding+Hostname+Checking+to+Certificate+Verification/
+[2]. http://permalink.gmane.org/gmane.comp.encryption.openssl.user/29772
+
+For manually validating hostname [2].
+
+To compile,
+gcc -o validate ssl_cert_verification.c -lcrypto -lssl -g
+
+Compiled and tested in brute.aalto.fi.
+
+Code explanation from main:
+1. initialize the SSL libraries using the Openssl library functions.
+2. Load the local CA certs from /etc/ssl/certs/ and set the peer verification method.
+3. Create a TCP socket with hostname and portnumber passed.
+4. Use BIO for linking SSL to the TCP socket and initiate the handshake.
+5. Use the in-built function (SSL_get_verify_result) to validate the peer certificate.
+    If no error, manually extract the SAN and validate with the hostname. 
+    The program only checks for characters to the right of
+    '*' if present in the DNS name. All string after all '*' are checked if they are
+    present in hostname.
+6. If the certificates are valid, do a HTTP GET and print the response.
