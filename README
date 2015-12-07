@@ -10,7 +10,6 @@ For manually validating hostname [2].
 To compile,
 gcc -o validate ssl_cert_verification.c -lcrypto -lssl -g
 
-Compiled and tested in brute.aalto.fi.
 
 Code explanation from main:
 1. initialize the SSL libraries using the Openssl library functions.
