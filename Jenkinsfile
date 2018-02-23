@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                sh 'echo "Starting gcc compilation"'
                 sh 'gcc -o validate ssl_cert_verification.c -lcrypto -lssl -g'
+                sh '$?'
             }
         }
     }
